@@ -2,7 +2,9 @@ timetrack = """
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="1; URL=/">
     <style>
+    .divout{{padding: 5px;width: 250px;}}
     .button {{
       background-color: #4CAF50;
       border: none;
@@ -39,15 +41,25 @@ timetrack = """
       .column {{
         width: 100%;
       }}
+      .divout{{padding: 10px;width: 100%;}}
     }}
+    
     </style>
+    <script>
+    
+    </script>
 </head>
 <body>
     <h1>Welcome to GP Slot Ameixa</h1>  
-    
-        <a href="/data" class="button">Inserir dados</a>
-        <a href="/reset" class="button">Reset</a>
-        <a href="/start" class="button">Iniciar contagens</a>
+    <div class="divout">
+        <a style="display:block" href="/data" class="button">Inserir dados</a>
+    </div>
+    <div class="divout">
+        <a style="display:block" href="/reset" class="button">Reset</a>
+    </div>
+    <div class="divout">
+        <a style="display:block" href="/start" class="button">Iniciar contagens</a>
+    </div>
         <p>Preparado: {ready}</p>
     
     <h2>Time Track {laps} Voltas</h2>

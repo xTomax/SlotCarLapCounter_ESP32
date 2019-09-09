@@ -1,0 +1,20 @@
+{
+	"schema": 2,
+	"known_networks": [
+		{
+			"ssid": "Tomas-Casa",
+			"password": "pensa1bocado",
+			"enables_webrepl": true
+		},
+	],
+	"access_point": {
+		"config": {
+			"essid": "SLOT_Ameixa",
+			"channel": 11,
+			"hidden": false,
+			"password": "12345678"
+		},
+		"enables_webrepl": true,
+		"start_policy": "fallback"
+	}
+}

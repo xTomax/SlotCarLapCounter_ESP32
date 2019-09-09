@@ -75,10 +75,10 @@ def calcTrack():
             ret.append(runningTrack[i])
         ret.append(runningTrack[0])
     
-    car1["Track" + str(ret[0])] = list()
-    car2["Track" + str(ret[1])] = list()
-    car3["Track" + str(ret[2])] = list()
-    car4["Track" + str(ret[3])] = list() 
+    car1["Pista" + str(ret[0])] = list()
+    car2["Pista" + str(ret[1])] = list()
+    car3["Pista" + str(ret[2])] = list()
+    car4["Pista" + str(ret[3])] = list() 
     
     runningTrack = ret
     resetTimeLaps()
@@ -104,7 +104,7 @@ def car1Timer(p):
                 return
             
             print('Appending Car1 Time Track: ', cur_time - car1_timelap)
-            car1["Track" + str(runningTrack[0])].append(cur_time - car1_timelap)
+            car1["Pista" + str(runningTrack[0])].append(cur_time - car1_timelap)
             car1_timelap = cur_time
             car1_laps = car1_laps + 1
     #else:  
@@ -132,7 +132,7 @@ def car2Timer(p):
                 return
             
             print('Appending Car2 Time Track: ', cur_time - car2_timelap)
-            car2["Track" + str(runningTrack[1])].append(cur_time - car2_timelap)
+            car2["Pista" + str(runningTrack[1])].append(cur_time - car2_timelap)
             car2_timelap = cur_time
             car2_laps = car2_laps + 1
 
@@ -159,7 +159,7 @@ def car3Timer(p):
                 return
             
             print('Appending Car3 Time Track: ', cur_time - car3_timelap)
-            car3["Track" + str(runningTrack[2])].append(cur_time - car3_timelap)
+            car3["Pista" + str(runningTrack[2])].append(cur_time - car3_timelap)
             car3_timelap = cur_time
             car3_laps = car3_laps + 1
 
@@ -186,7 +186,7 @@ def car4Timer(p):
                 return
             
             print('Appending Car4 Time Track: ', cur_time - car4_timelap)
-            car4["Track" + str(runningTrack[3])].append(cur_time - car4_timelap)
+            car4["Pista" + str(runningTrack[3])].append(cur_time - car4_timelap)
             car4_timelap = cur_time
             car4_laps = car4_laps + 1
 
@@ -228,11 +228,11 @@ def index(req, resp):
             trackCounter = t + trackCounter 
         dtimeTrackC1 = utime.localtime(int(trackCounter/1000))
         millsTrackC1 = trackCounter%1000
-        car1_t = car1_t + '<p>---------------------</p>'
+        car1_t = car1_t + '<p style="background-color:#004d00;">.</p>'
         car1_t = car1_t + '<p>Total: {}:{}.{}</p>'.format(dtimeTrackC1[4],dtimeTrackC1[5],millsTrackC1)    
     dtimeC1 = utime.localtime(int(timeSum/1000))
     millsC1 = timeSum%1000
-    car1_t = car1_t + '<p>---------------------</p>'
+    car1_t = car1_t + '<p style="background-color:#000;">.</p>'
     car1_t = car1_t + '<h3>Totais: {}:{}.{}</h3>'.format(dtimeC1[4],dtimeC1[5],millsC1)
     
     car2_t = ''
@@ -248,11 +248,11 @@ def index(req, resp):
             trackCounter = t + trackCounter 
         dtimeTrackC2 = utime.localtime(int(trackCounter/1000))
         millsTrackC2 = trackCounter%1000
-        car2_t = car2_t + '<p>---------------------</p>'
+        car2_t = car2_t + '<p style="background-color:#006600;">.</p>'
         car2_t = car2_t + '<p>Total: {}:{}.{}</p>'.format(dtimeTrackC2[4],dtimeTrackC2[5],millsTrackC2)    
     dtimeC2 = utime.localtime(int(timeSum/1000))
     millsC2 = timeSum%1000
-    car2_t = car2_t + '<p>---------------------</p>'
+    car2_t = car2_t + '<p style="background-color:#000;">.</p>'
     car2_t = car2_t + '<h3>Totais: {}:{}.{}</h3>'.format(dtimeC2[4],dtimeC2[5],millsC2)
     
     car3_t = ''
@@ -268,11 +268,11 @@ def index(req, resp):
             trackCounter = t + trackCounter 
         dtimeTrackC3 = utime.localtime(int(trackCounter/1000))
         millsTrackC3 = trackCounter%1000
-        car3_t = car3_t + '<p>---------------------</p>'
+        car3_t = car3_t + '<div style="background-color:#008000;">.</div>'
         car3_t = car3_t + '<p>Total: {}:{}.{}</p>'.format(dtimeTrackC3[4],dtimeTrackC3[5],millsTrackC3)    
     dtimeC3 = utime.localtime(int(timeSum/1000))
     millsC3 = timeSum%1000
-    car3_t = car3_t + '<p>---------------------</p>'
+    car3_t = car3_t + '<div style="background-color:#000;">.</div>'
     car3_t = car3_t + '<h3>Totais: {}:{}.{}</h3>'.format(dtimeC3[4],dtimeC3[5],millsC3)
     
     car4_t = ''
@@ -288,11 +288,11 @@ def index(req, resp):
             trackCounter = t + trackCounter 
         dtimeTrackC4 = utime.localtime(int(trackCounter/1000))
         millsTrackC4 = trackCounter%1000
-        car4_t = car4_t + '<p>---------------------</p>'
+        car4_t = car4_t + '<div style="background-color:#009900;">.</div>'
         car4_t = car4_t + '<p>Total: {}:{}.{}</p>'.format(dtimeTrackC4[4],dtimeTrackC4[5],millsTrackC4)    
     dtimeC4 = utime.localtime(int(timeSum/1000))
     millsC4 = timeSum%1000
-    car4_t = car4_t + '<p>---------------------</p>'
+    car4_t = car4_t + '<div style="background-color:#000;">.</div>'
     car4_t = car4_t + '<h3>Totais: {}:{}.{}</h3>'.format(dtimeC4[4],dtimeC4[5],millsC4)
     
     if gp_ready:
